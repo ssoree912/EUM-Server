@@ -90,3 +90,5 @@ target/
 
 *.yml
 *.sql
+
+*.json

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head >
+    <title>Firebase Google 로그인</title>
+    <!-- Firebase SDK 추가 -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+
+    <!-- Firebase 구성 초기화 -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBJh_OU_CFUbglh8txJH3X4AP4J-vwnucI",
+            authDomain: "eum-app.firebaseapp.com",
+            projectId: "eum-app",
+            storageBucket: "eum-app.appspot.com",
+            messagingSenderId: "108374454800",
+            appId: "1:108374454800:web:051e1e4efc63fe408f5095",
+            measurementId: "G-LJ5QXBT25T"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+</head>
+<body>
+<h1>Firebase Google 로그인 예제</h1>
+
+<!-- Google 로그인 버튼 -->
+<button id="googleSignInButton">Google 로그인</button>
+
+<script>
+    // Google 로그인 버튼 클릭 이벤트 처리
+    document.getElementById("googleSignInButton").addEventListener("click", function () {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider)
+            .then(function (result) {
+                // 로그인 성공 시, Firebase 사용자 객체에서 ID 토큰을 가져옴
+                var user = result.user;
+                // 사용자의 ID 토큰을 가져오기
+                user.getIdToken()
+                    .then(function (idToken) {
+                        console.log("ID 토큰:", idToken);
+                    })
+                    .catch(function (error) {
+                        // ID 토큰 가져오기 실패 처리
+                        console.error("ID 토큰 가져오기 실패:", error);
+                    });
+            })
+            .catch(function (error) {
+                // 로그인 실패 처리
+                console.error("로그인 실패:", error);
+            });
+    });
+
+</script>
+</body>
+</html>
