@@ -20,6 +20,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect # 중복 설정 제거
     generate-ddl: true
-  jwt:
-    header: Authorization
-    secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHN
+jwt:
+  header: Authorization
+  secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHN
+kakao :
+  client-id: ${client-id}
+  redirect-url: ${redirect-uri}
