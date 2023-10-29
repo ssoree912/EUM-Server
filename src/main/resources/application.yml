@@ -14,12 +14,15 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
       dialect: org.hibernate.dialect.MySQL5Dialect # 수정된 부분
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect # 중복 설정 제거
     generate-ddl: true
+  sql:
+    init:
+      mode: always
 jwt:
   header: Authorization
   secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHN
