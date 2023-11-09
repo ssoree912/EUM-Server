@@ -14,7 +14,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
       dialect: org.hibernate.dialect.MySQL5Dialect # 수정된 부분
     properties:
       hibernate:
@@ -29,6 +29,3 @@ jwt:
 kakao :
   client-id: ${client-id}
   redirect-url: ${redirect-uri}
-#firebase:
-#  service-account-filename: src/main/resources/firebase.json
-#  realtime-database-url: https://.firebaseio.com
