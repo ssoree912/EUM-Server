@@ -14,7 +14,9 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      format-sql: true
+      highlight-sql: true
+      ddl-auto: create
       dialect: org.hibernate.dialect.MySQL5Dialect # 수정된 부분
     properties:
       hibernate:
