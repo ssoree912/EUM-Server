@@ -7,7 +7,7 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  ##
+  ##F
   redis:
     host : localhost
     port: 6379
@@ -16,7 +16,7 @@ spring:
     hibernate:
       format-sql: true
       highlight-sql: true
-      ddl-auto: update
+      ddl-auto: create
       dialect: org.hibernate.dialect.MySQL5Dialect # 수정된 부분
     properties:
       hibernate:
